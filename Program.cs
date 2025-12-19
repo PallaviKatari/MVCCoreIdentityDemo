@@ -13,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Add Identity
 // Identity UI provides ready-made pages for:
+// AccountController - Login,Register,Logout,Manage - We cannot see - available by default
 /// Account / Login
 /// Account / Register
 /// Account / Logout
