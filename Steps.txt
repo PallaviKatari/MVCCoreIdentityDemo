@@ -1,0 +1,25 @@
+﻿1. Add the necessary dependencies to your project.
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.AspNetCore.Identity.UI
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore
+2. Create a new ASP.NET Core Web Application.
+3. Choose "Web Application (Model-View-Controller)" and ensure that "Authentication" is set to "Individual User Accounts".
+4. Set up the database connection string in appsettings.json.
+5. Create the ApplicationDbContext class that inherits from IdentityDbContext.
+6. Configure services in Program.cs to use Entity Framework and Identity.
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+})
+.AddEntityFrameworkStores<ApplicationDbContext>();
+7. Use the Razor Pages for Identity UI.
+app.MapRazorPages();
+8. Create the database and apply migrations using the Package Manager Console.
+Add-Migration InitialCreate
+Update-Database
+9. Run the application and test user registration and login functionality.
+
+
